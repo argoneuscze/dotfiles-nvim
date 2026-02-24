@@ -1,5 +1,6 @@
 return {
     "Mofiqul/dracula.nvim",
-    name = "dracula"
+    name = "dracula",
+    priority = 5000
 }
 
