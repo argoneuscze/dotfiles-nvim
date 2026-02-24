@@ -2,11 +2,17 @@ local servers = {
 	-- LSPs
 	"lua_ls",
 	"pyright",
+}
+
+local extras = {
 	-- Formatters
 	"stylua",
 	-- Linters
 	"ruff",
 }
+
+local all = vim.deepcopy(servers)
+vim.list_extend(all, extras)
 
 return {
 	"mason-org/mason-lspconfig.nvim",
@@ -16,7 +22,7 @@ return {
 	},
 	config = function()
 		require("mason-lspconfig").setup({
-			ensure_installed = servers,
+			ensure_installed = all,
 			automatic_enable = false,
 		})
 
