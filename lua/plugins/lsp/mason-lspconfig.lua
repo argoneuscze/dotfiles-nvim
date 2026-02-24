@@ -4,6 +4,7 @@ local servers = {
 	"pyright",
 	"ruff",
 	"vtsls",
+	"gopls",
 }
 
 return {
