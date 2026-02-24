@@ -2,13 +2,13 @@ local servers = {
 	-- LSPs
 	"lua_ls",
 	"pyright",
+	"ruff",
 }
 
 local extras = {
 	-- Formatters
 	"stylua",
 	-- Linters
-	"ruff",
 }
 
 local all = vim.deepcopy(servers)

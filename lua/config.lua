@@ -1,7 +1,7 @@
--- basics    
+-- basics
 vim.o.number = true
 vim.g.have_nerd_font = true
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 vim.o.showmode = false
 vim.o.confirm = true
 
@@ -16,6 +16,5 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set leader to <space>
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "

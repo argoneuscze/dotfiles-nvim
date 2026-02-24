@@ -1,4 +1,3 @@
-require "config"
-require "lazynvim"
-require "theme"
-
+require("config")
+require("lazynvim")
+require("theme")
