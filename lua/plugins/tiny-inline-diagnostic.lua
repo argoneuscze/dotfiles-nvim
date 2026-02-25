@@ -15,11 +15,16 @@ return {
       },
     })
 
-    local signs = { Error = "●", Warn = "●", Info = "●", Hint = "●" }
+    local signs = {
+      [vim.diagnostic.severity.ERROR] = "●",
+      [vim.diagnostic.severity.WARN] = "●",
+      [vim.diagnostic.severity.INFO] = "●",
+      [vim.diagnostic.severity.HINT] = "●",
+    }
     for type, icon in pairs(signs) do
       local hl = "Diagnostic" .. type
       vim.fn.sign_define("DiagnosticSign" .. type, { text = icon, texthl = hl, numhl = hl })
     end
-    vim.diagnostic.config({ virtual_text = false, signs = true })
+    vim.diagnostic.config({ virtual_text = false, signs = { text = signs } })
   end,
 }
