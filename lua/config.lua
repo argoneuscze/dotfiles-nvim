@@ -4,6 +4,7 @@ vim.g.have_nerd_font = true
 vim.o.mouse = "a"
 vim.o.showmode = false
 vim.o.confirm = true
+vim.o.winborder = "single"
 
 -- search
 vim.o.ignorecase = true
@@ -21,3 +22,6 @@ vim.g.maplocalleader = " "
 
 -- custom commands
 vim.api.nvim_create_user_command("ConfigEdit", "execute 'e '  stdpath('config')", {})
+
+-- keymaps
+vim.keymap.set("n", "<C-s>", vim.lsp.buf.hover, { desc = "LSP Hover documentation" })
