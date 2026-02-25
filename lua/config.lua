@@ -18,3 +18,6 @@ vim.o.expandtab = true
 -- set leader to <space>
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- custom commands
+vim.api.nvim_create_user_command("ConfigEdit", "execute 'e '  stdpath('config')", {})
