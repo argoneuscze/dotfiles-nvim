@@ -1,19 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    -- Lua
-    vim.lsp.config("lua_ls", {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {
-              "vim",
-            },
-          },
-        },
-      },
-    })
-
     -- Python
     vim.lsp.config("pyright", {
       settings = {
@@ -41,7 +28,33 @@ return {
           gofumpt = true,
         },
       },
+      on_attach = function(client, bufnr)
+        local group = vim.api.nvim_create_augroup("GoFormat_" .. bufnr, { clear = true })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = group,
+          buffer = bufnr,
+          callback = function()
+            local range_params = vim.lsp.util.make_range_params(vim.api.nvim_get_current_win(), client.offset_encoding)
+            local params = {
+              textDocument = range_params.textDocument,
+              range = range_params.range,
+              context = {
+                only = { "source.organizeImports" },
+              },
+            }
+            local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+            for cid, res in pairs(result or {}) do
+              for _, r in pairs(res.result or {}) do
+                if r.edit then
+                  local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                  vim.lsp.util.apply_workspace_edit(r.edit, enc)
+                end
+              end
+            end
+            vim.lsp.buf.format({ async = false, id = client.id })
+          end,
+        })
+      end,
     })
-    -- TODO add LspAttach for the goimports (maybe an augroup too)
   end,
 }

@@ -14,10 +14,15 @@ return {
         json = { "prettierd" },
         yaml = { "prettierd" },
       },
-      format_on_save = {
-        timeout_ms = 1000,
-        lsp_format = "fallback",
-      },
+      format_on_save = function(bufnr)
+        -- skip conform for specific languages
+        local ignored = { "go" }
+        if vim.tbl_contains(ignored, vim.bo[bufnr].filetype) then
+          return
+        end
+        -- use LSP fallback
+        return { timeout_ms = 3000, lsp_format = "fallback" }
+      end,
     })
   end,
 }
