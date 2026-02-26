@@ -4,7 +4,7 @@ vim.g.have_nerd_font = true
 vim.o.mouse = "a"
 vim.o.showmode = false
 vim.o.confirm = true
-vim.o.winborder = "single"
+vim.o.winborder = "rounded"
 
 -- search
 vim.o.ignorecase = true
