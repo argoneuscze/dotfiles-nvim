@@ -11,6 +11,7 @@ vim.o.undofile = true
 vim.o.cursorline = true
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
+vim.opt.termguicolors = true
 
 -- search
 vim.o.ignorecase = true
