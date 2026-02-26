@@ -3,9 +3,10 @@ local servers = {
   "lua_ls",
   "pyright",
   "ruff",
-  "vtsls",
   "gopls",
-  "rust_analyzer",
+  "html",
+  "cssls",
+  "vtsls",
 }
 
 return {
@@ -15,18 +16,7 @@ return {
     "neovim/nvim-lspconfig",
     "saghen/blink.cmp",
   },
-  config = function()
-    require("mason-lspconfig").setup({
-      ensure_installed = servers,
-      automatic_enable = false,
-    })
-
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
-    for _, server in ipairs(servers) do
-      vim.lsp.config(server, {
-        capabilities = capabilities,
-      })
-      vim.lsp.enable(server)
-    end
-  end,
+  opts = {
+    ensure_installed = servers,
+  },
 }
