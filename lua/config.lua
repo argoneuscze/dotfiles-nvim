@@ -24,4 +24,5 @@ vim.g.maplocalleader = " "
 vim.api.nvim_create_user_command("ConfigEdit", "execute 'e '  stdpath('config')", {})
 
 -- keymaps
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<C-s>", vim.lsp.buf.hover, { desc = "LSP Hover documentation" })

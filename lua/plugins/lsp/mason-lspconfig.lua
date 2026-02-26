@@ -5,6 +5,7 @@ local servers = {
   "ruff",
   "vtsls",
   "gopls",
+  "rust_analyzer",
 }
 
 return {
