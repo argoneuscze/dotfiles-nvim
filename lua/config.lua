@@ -53,6 +53,6 @@ vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", { desc = "LSP Defin
 vim.keymap.set("n", "gD", "<cmd>FzfLua lsp_typedefs<CR>", { desc = "LSP Type definition" })
 vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", { desc = "LSP References" })
 vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", { desc = "LSP Implementation" })
-vim.keymap.set("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", { desc = "LSP Code actions" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code actions" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 vim.keymap.set("n", "<C-s>", vim.lsp.buf.hover, { desc = "LSP Hover" })

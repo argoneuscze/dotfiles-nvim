@@ -10,6 +10,8 @@ return {
     { "<leader>fb", "<cmd>FzfLua buffers<CR>", desc = "Buffers" },
     { "<leader>fR", "<cmd>FzfLua oldfiles<CR>", desc = "Recent files" },
     { "<leader>fu", "<cmd>FzfLua undotree<CR>", desc = "Undo tree" },
+    { "<leader>fq", "<cmd>FzfLua quickfix<CR>", desc = "Quickfix" },
+    { "<leader>fQ", "<cmd>FzfLua quickfix_stack<CR>", desc = "Quickfix stack" },
     { "<leader>fr", "<cmd>FzfLua lsp_references<CR>", desc = "LSP References" },
     { "<leader>fd", "<cmd>FzfLua lsp_document_diagnostics<CR>", desc = "LSP Document diagnostics" },
     { "<leader>fD", "<cmd>FzfLua lsp_workspace_diagnostics<CR>", desc = "LSP Workspace diagnostics" },
