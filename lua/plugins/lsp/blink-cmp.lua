@@ -19,7 +19,11 @@ return {
       trigger = { show_in_snippet = true },
       list = { selection = { preselect = true } },
     },
-    signature = { enabled = true, window = { show_documentation = false } },
+    signature = {
+      enabled = true,
+      trigger = { show_on_insert = true },
+      window = { show_documentation = true },
+    },
     sources = {
       default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
