@@ -27,6 +27,9 @@ return {
       "css",
       "javascript",
       "typescript",
+      "tsx",
+      "angular",
+      "vue",
     }
 
     ts.install(langs)
