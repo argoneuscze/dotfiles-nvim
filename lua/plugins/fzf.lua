@@ -12,7 +12,7 @@ return {
     { "<leader>fu", "<cmd>FzfLua undotree<CR>", desc = "Undo tree" },
     { "<leader>fq", "<cmd>FzfLua quickfix<CR>", desc = "Quickfix" },
     { "<leader>fQ", "<cmd>FzfLua quickfix_stack<CR>", desc = "Quickfix stack" },
-    { "<leader>fr", "<cmd>FzfLua lsp_references<CR>", desc = "LSP References" },
+    { "<leader>fr", "<cmd>FzfLua lsp_finder<CR>", desc = "LSP Finder" },
     { "<leader>fd", "<cmd>FzfLua lsp_document_diagnostics<CR>", desc = "LSP Document diagnostics" },
     { "<leader>fD", "<cmd>FzfLua lsp_workspace_diagnostics<CR>", desc = "LSP Workspace diagnostics" },
     { "<leader>fs", "<cmd>FzfLua lsp_document_symbols<CR>", desc = "LSP Document symbols" },
