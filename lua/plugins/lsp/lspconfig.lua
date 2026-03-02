@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     -- Python
-    vim.lsp.config("pyright", {
+    vim.lsp.config("basedpyright", {
       settings = {
         pyright = {
           -- Using Ruff's import organizer

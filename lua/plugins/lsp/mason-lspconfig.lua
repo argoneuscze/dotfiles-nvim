@@ -1,7 +1,7 @@
 local servers = {
   -- LSPs
   "lua_ls",
-  "pyright",
+  "basedpyright",
   { "gopls", depends = "go" },
   "html",
   "clangd",
