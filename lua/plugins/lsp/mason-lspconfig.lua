@@ -2,7 +2,6 @@ local servers = {
   -- LSPs
   "lua_ls",
   "pyright",
-  "ruff",
   { "gopls", depends = "go" },
   "html",
   "clangd",
@@ -18,16 +17,19 @@ return {
     "saghen/blink.cmp",
   },
   config = function()
-    local ensure_installed = {}
+    local installed = {}
     for _, entry in ipairs(servers) do
       if type(entry) == "table" then
         if vim.fn.executable(entry.depends) == 1 then
-          table.insert(ensure_installed, entry[1])
+          table.insert(installed, entry[1])
         end
       else
-        table.insert(ensure_installed, entry)
+        table.insert(installed, entry)
       end
     end
-    require("mason-lspconfig").setup({ ensure_installed = ensure_installed })
+    require("mason-lspconfig").setup({
+      ensure_installed = installed,
+      automatic_enable = installed,
+    })
   end,
 }

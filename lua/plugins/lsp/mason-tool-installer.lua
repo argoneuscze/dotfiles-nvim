@@ -3,7 +3,7 @@ local tools = {
   "stylua",
   "prettierd",
   -- Linters
-  -- ...
+  "ruff",
 }
 
 return {
